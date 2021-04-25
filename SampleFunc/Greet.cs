@@ -18,7 +18,7 @@ namespace SampleFunc
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string version = "1.0";
+            string version = "1.1";
             return new OkObjectResult($"Hello World: {version} - {DateTime.Now.ToString()}");
         }
     }
