@@ -9,7 +9,7 @@ variables:
 steps:
 - checkout: self
 - script: 
-    dotnet build SampleFunc --configuration $(buildConfiguration) 
+    dotnet build SampleFunc --configuration $(buildConfiguration) --output $(Build.BinariesDirectory)
   displayName: 'dotnet build SampleFunc $(buildConfiguration)'
 - task: ArchiveFiles@2
   inputs:
