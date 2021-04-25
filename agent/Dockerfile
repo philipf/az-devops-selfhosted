@@ -15,6 +15,8 @@ RUN apt-get update \
         libcurl4 \
         libunwind8 \
         netcat \
+        zip \
+        unzip \
         wget \
         libssl1.0
 

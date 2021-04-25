@@ -9,7 +9,6 @@ variables:
 steps:
 - checkout: self
 - script: 
-    dotnet clean SampleFunc;
     dotnet build SampleFunc --configuration $(buildConfiguration) 
   displayName: 'dotnet build SampleFunc $(buildConfiguration)'
 - task: ArchiveFiles@2
