@@ -6,6 +6,7 @@
 trigger:
 - master
 
+
 pool:
   name: PfLocal
 
@@ -14,6 +15,6 @@ variables:
 
 steps:
 - checkout: self
-- checkout: PepDeploy2
+- checkout: AnotherRepo
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
