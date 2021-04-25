@@ -3,8 +3,25 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  azureSubscription: ADO.philipfourie
+  appName: pf-pep-hello
 
 steps:
 - checkout: self
-- script: dotnet build SampleFunc/ --configuration $(buildConfiguration) 
+- script: 
+    dotnet clean SampleFunc
+    dotnet build SampleFunc --configuration $(buildConfiguration) 
   displayName: 'dotnet build SampleFunc $(buildConfiguration)'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)' 
+    includeRootFolder: true 
+    archiveType: 'zip' # Options: zip, 7z, tar, wim
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
+    replaceExistingArchive: true 
+- task: AzureFunctionApp@1 # Add this at the end of your file
+  inputs:
+    azureSubscription: $(ADO.philipfourie)
+    appType: functionAppLinux
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip  
