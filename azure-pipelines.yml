@@ -15,6 +15,6 @@ variables:
 
 steps:
 - checkout: self
-- checkout: AnotherRepo
+- checkout: git://PepDeploy/PepDeploy2
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
