@@ -21,7 +21,7 @@ steps:
     replaceExistingArchive: true 
 - task: AzureFunctionApp@1 # Add this at the end of your file
   inputs:
-    azureSubscription: $(ADO.philipfourie)
+    azureSubscription: $(azureSubscription)
     appType: functionAppLinux
     appName: $(appName)
     package: $(System.ArtifactsDirectory)/**/*.zip  
