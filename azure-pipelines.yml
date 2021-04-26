@@ -7,7 +7,6 @@ variables:
   appName: pf-pep-hello
 
 steps:
-- checkout: self
 - script: 
     dotnet build SampleFunc --configuration $(buildConfiguration) --output $(Build.BinariesDirectory)
   displayName: 'dotnet build SampleFunc $(buildConfiguration)'
