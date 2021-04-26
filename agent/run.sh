@@ -1,5 +1,5 @@
-AZP_URL=https://dev.azure.com/philipfourie/
 #AZP_TOKEN Use from environment
+AZP_URL=https://dev.azure.com/philipfourie/
 AZP_AGENT_NAME=wsdl2agent 
 AZP_POOL=PfLocal
 
